@@ -6,7 +6,7 @@
 ![GCP](https://img.shields.io/badge/GCP-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-%230078D4.svg?style=for-the-badge&logo=microsoft-azure&logoColor=white)
 
-This repository contains production-grade Terraform code for provisioning scalable Kubernetes clusters across multiple cloud providers (AWS, GCP, Azure, and Oracle Cloud). It is designed to be a robust, reusable boilerplate for creating both stateless and stateful application infrastructures.
+This repository contains production-grade Terraform code for provisioning scalable Kubernetes clusters across multiple cloud providers (AWS, GCP, Azure). It is designed to be a robust, reusable boilerplate for creating both stateless and stateful application infrastructures.
 
 ## Key Features
 
