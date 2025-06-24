@@ -46,7 +46,6 @@ This two-tiered approach ensures both cost-efficiency during low traffic and hig
 
 2.  **Configure Your Deployment:**
     -   Navigate to the directory for your chosen cloud provider.
-    -   Rename `terraform.tfvars.example` to `terraform.tfvars`.
     -   Edit `terraform.tfvars` to define your desired configuration (e.g., region, machine types, node count).
 
 3.  **Deploy the Infrastructure:**
