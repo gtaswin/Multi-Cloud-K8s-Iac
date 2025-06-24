@@ -10,14 +10,14 @@ This repository contains production-grade Terraform code for provisioning scalab
 
 ## Key Features
 
--   **Multi-Cloud Support:** Deploy consistent Kubernetes infrastructure on AWS, GCP, Azure, and OCI.
+-   **Multi-Cloud Support:** Deploy consistent Kubernetes infrastructure on AWS, GCP and Azure.
 -   **Automated Scaling:** Natively supports autoscaling at both the Pod (HPA) and Node (Cluster Autoscaler) levels.
 -   **Workspace Ready:** Utilizes Terraform Workspaces to easily manage multiple environments (e.g., `staging`, `production`) with the same codebase.
 -   **Stateful & Stateless Design:** Provides a foundation for running any workload, from simple web apps to complex data services.
 
 ## Architecture Overview
 
-The diagram below illustrates the high-level architecture, including the automated scaling mechanism that responds to sudden traffic increases.
+The diagram below illustrates the high-level architecture, including the automated scaling mechanism that responds to sudden traffic increases. This applies to all Cloud providers.
 
 ![Cloud Infrastructure Architecture](./assets/architecture.svg)
 
