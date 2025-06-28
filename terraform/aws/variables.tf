@@ -94,7 +94,7 @@ variable "vm_disk_size_gb_slave" {
 
 variable "ssh_public_key" {
   description = "The public SSH key to use for SSH authentication."
-  default     = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkXXVfyuSZMq2ATR9m4hSJiRLXRU4xKrz7f4qTRs5m9lovZoh9UTsetm2AJEmLSbl+Zqcq8QR2Ium6jI79aeobiE5LY73Y1sOPJJC/eN/RWJW+TMUBi3kKzCXeFGJoqBTdUufWTrWkveY36WbD245BKbEuRdefq8Db27WO0yfW3Rct3fbpKxHqXWbx400l1q82CuvpeWYDRM4GcKOmPw4vhJMfw2tyj1yDnx70DYiRgoWaXk7/f6v1mqQlu8Q2OQZp+g3DLP5koOrS2NVTNznEqgWnwVutOpPy7G7Z45VK+UrOooExrLGFiFMd1Okkc1Nd+euWs0ILGo21SXSBrm/J gta@hades"
+  default     = ""
 }
 
 variable "aks_node_size" {
