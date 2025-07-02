@@ -45,22 +45,60 @@ This two-tiered approach ensures both cost-efficiency during low traffic and hig
     ```
 
 2.  **Configure Your Deployment:**
-    -   Navigate to the directory for your chosen cloud provider.
-    -   Edit `terraform.tfvars` to define your desired configuration (e.g., region, machine types, node count).
+    -   Follow the provider-specific instructions below to set up your credentials and environment.
+    -   Navigate to the directory for your chosen cloud provider (`aws`, `azure`, or `gcp`).
+    -   Review the `variables.tf` file to see available configuration options.
 
 3.  **Deploy the Infrastructure:**
-    ```sh
-    # Initialize Terraform
-    terraform init
-
-    # Apply the configuration to create the cluster
-    terraform apply
-    ```
+    -   Run the `terraform init` command.
+    -   Run the `terraform apply` command, passing the required variables as prompted or via a `.tfvars` file.
 
 4.  **Destroy the Infrastructure:**
     When you are finished, you can tear down all created resources:
     ```sh
     terraform destroy
+    ```
+
+## Provider-Specific Instructions
+
+### AWS
+
+1.  **Create an IAM Policy:** Create an IAM policy named `Terraform` with the permissions required to create and manage EC2 and EKS resources.
+2.  **Create an IAM User:** Create an IAM user and attach the `Terraform` policy.
+3.  **Generate Access Keys:** Generate an access key ID and secret access key for the IAM user.
+4.  **Deploy:**
+    ```sh
+    cd terraform/aws
+    terraform init
+    terraform apply
+    ```
+
+### Azure
+
+1.  **Get Subscription ID:** Note your Azure subscription ID.
+2.  **Create a Service Principal:** Create an Azure Active Directory service principal to get a client ID, tenant ID, and client secret.
+3.  **Create a Custom Role:** Create a custom role named `Terraform` with the necessary permissions for creating resources.
+4.  **Assign Role:** Assign the `Terraform` role to the service principal you created.
+5.  **Deploy:**
+    ```sh
+    cd terraform/azure
+    terraform init
+    terraform apply -var subscription_id="<your_subscription_id>" -var client_id="<your_client_id>" -var client_secret="<your_client_secret>" -var tenant_id="<your_tenant_id>"
+    ```
+
+### GCP
+
+1.  **Create a Service Account:** Create a GCP service account with the following roles:
+    *   Compute Admin
+    *   Compute Network Admin
+    *   Kubernetes Engine Admin
+    *   Service Account User
+2.  **Generate a Key:** Create a JSON key for the service account and download it.
+3.  **Deploy:**
+    ```sh
+    cd terraform/gcp
+    terraform init
+    terraform apply -var project_id="<your_project_id>" -var sa_key_file="<path_to_your_sa_key.json>"
     ```
 
 ## Advanced Usage
